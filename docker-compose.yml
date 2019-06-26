@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  client:
+    image: nginx:alpine
+    container_name: browser-client
+    restart: always
+    volumes:
+      - type: bind
+        source: ./browser-client/index.html
+        target: /usr/share/nginx/html/index.html
+      - type: bind
+        source: ./browser-client/nginx.conf
+        target: /etc/nginx/conf.d/default.conf
+    ports:
+      - "8081:80"
