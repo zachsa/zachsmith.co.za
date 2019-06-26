@@ -1,4 +1,9 @@
 # API
+## Run just the API
+- Change directory to the browser client `cd api`
+- Build a docker image `docker build -t api .`
+- Start a docker container on port 8081 `docker run -d -p 8082:9000 --restart always api`
+- visit [localhost:8082](http://localhost:8082)
 
 # Browser client
 ## Run just the client
