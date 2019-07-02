@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>My site</title>
 </head>
+
 <body>
-<p>Hi, I'm Zach!</p>
-<p><a target="_blank" href="https://github.com/zachsa">Github</a></p>
-<p><a target="_blank" href="https://www.linkedin.com/in/zachsmithsouthafrica/">LinkedIn</a></p>
-<p><a target="_blank" href="https://stackoverflow.com/users/3114742">StackOverflow</a></p>
-<p><a target="_blank" href="https://open.spotify.com/album/0HCL1uiaVM9tSyJzhpZIq7">Album</a></p>
+    <p>Hi, I'm Zach!</p>
+    <p><a target="_blank" href="https://github.com/zachsa">Github</a></p>
+    <p><a target="_blank" href="https://www.linkedin.com/in/zachsmithsouthafrica/">LinkedIn</a></p>
+    <p><a target="_blank" href="https://stackoverflow.com/users/3114742">StackOverflow</a></p>
+    <p><a target="_blank" href="https://open.spotify.com/album/0HCL1uiaVM9tSyJzhpZIq7">Album</a></p>
+
+    <script>
+        (async () => {
+            const result = await new Promise((resolve, reject) => {
+                fetch('http://localhost:8082')
+                    .then(result => result.text())
+                    .then(text => resolve(text))
+                    .catch(err => reject(err))
+            })
+
+            console.log(result)
+        })()
+        .catch(err => console.log('error', err))
+    </script>
 </body>
+
 </html>
