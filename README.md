@@ -14,3 +14,5 @@
 
 # Run all the containers
 - `docker-compose up -d`
+
+Refresh images with this command: `docker-compose up --force-recreate --build`

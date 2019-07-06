@@ -14,6 +14,7 @@ createServer((request, response) => {
   ]
   const origin = request.headers.origin
   if (allowedOrigins.indexOf(origin) > -1) headers['Access-Control-Allow-Origin'] = origin
+  console.log('The origin is', request.headers.origin)
 
   if (request.method === 'OPTIONS') {
     response.writeHead(204, headers)
