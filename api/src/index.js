@@ -10,9 +10,8 @@ createServer((request, response) => {
     'Access-Control-Max-Age': 2592000, // 30 days
   }
   const allowedOrigins = [
-    'http://localhost:8080',,
-    'http://localhost:8081',
-    'http://localhost:8082'
+    'http://localhost:3000',
+    'http://localhost:3001'
   ]
   const origin = request.headers.origin
   if (allowedOrigins.indexOf(origin) > -1) headers['Access-Control-Allow-Origin'] = origin

@@ -15,3 +15,16 @@ render(
   <HomePage />,
   document.getElementById('root')
 )
+
+// TODO: For testing purposes
+;(async () => {
+  const result = await new Promise((resolve, reject) => {
+      fetch('http://localhost:3000')
+          .then(result => result.text())
+          .then(text => resolve(text))
+          .catch(err => reject(err))
+  })
+
+  console.log(result)
+})()
+.catch(err => console.log('error', err))
