@@ -1,0 +1,8 @@
+@import '~react-md/src/scss/react-md';
+
+// Theme builder: https://react-md.mlaursen.com/customization/theme-builder
+$md-light-theme: true;
+$md-primary-color: rgb(9, 82, 137);
+$md-secondary-color: rgb(253, 97, 48);
+
+@include react-md-everything;
