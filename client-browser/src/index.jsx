@@ -4,7 +4,6 @@ import { render } from "react-dom"
 import HomePage from './pages/home.jsx'
 import WebFontLoader from 'webfontloader'
 import ApolloClient from "apollo-boost"
-import { gql } from "apollo-boost"
 import { ApolloProvider } from "react-apollo"
 
 // Example HTTP API / GQL request
