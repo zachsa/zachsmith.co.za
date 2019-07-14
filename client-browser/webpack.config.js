@@ -1,4 +1,3 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin")
 const path = require('path')
 
 module.exports = {
@@ -18,13 +17,9 @@ module.exports = {
       }          
     ]
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./index.html",
-      filename: "./index.html"
-    })
-  ],
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    port: 9000,
     historyApiFallback: true,
     compress: true,
     before: function(app, server) {

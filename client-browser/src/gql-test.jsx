@@ -1,7 +1,8 @@
+import React from 'react'
 import { Query } from "react-apollo"
 import { gql } from "apollo-boost"
 
-const Greeter = () => (
+export default () => (
   <Query query={gql`
   {
     greeting {
@@ -12,7 +13,7 @@ const Greeter = () => (
   { ({loading, error, data}) => {
       if (loading) return <p>Loading...</p>
       if (error) return <p>Error occurred...</p>
-      return <p>data.message</p>
+      return <p>{JSON.stringify(data)}</p>
     }
   }
   </Query>
