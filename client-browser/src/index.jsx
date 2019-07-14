@@ -3,6 +3,14 @@ import React from 'react'
 import { render } from "react-dom"
 import HomePage from './pages/home.jsx'
 import WebFontLoader from 'webfontloader'
+import ApolloClient from "apollo-boost"
+import { gql } from "apollo-boost"
+import { ApolloProvider } from "react-apollo"
+
+// Example HTTP API / GQL request
+import Greeter from './gql-test.jsx'
+import httpTest from './http-test.js'
+httpTest()
 
 // Load the fonts
 WebFontLoader.load({
@@ -11,20 +19,16 @@ WebFontLoader.load({
   }
 })
 
-render(
-  <HomePage />,
-  document.getElementById('root')
+const client = new ApolloClient({ uri: "http://localhost:4000" })
+
+const App = () => (
+  <ApolloProvider client={client}>
+    <HomePage />
+    <Greeter />
+  </ApolloProvider>
 )
 
-// TODO: For testing purposes
-;(async () => {
-  const result = await new Promise((resolve, reject) => {
-      fetch('http://localhost:3000')
-          .then(result => result.text())
-          .then(text => resolve(text))
-          .catch(err => reject(err))
-  })
-
-  console.log(result)
-})()
-.catch(err => console.log('error', err))
+render(
+  <App />,
+  document.getElementById('root')
+)

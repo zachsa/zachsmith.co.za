@@ -25,7 +25,7 @@ createServer((request, response) => {
 
   if (['GET', 'POST'].indexOf(request.method) > -1) {
     response.writeHead(200, headers)
-    response.end('Hello World 2')
+    response.end('Hello World')
     return
   }
 

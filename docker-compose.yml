@@ -2,8 +2,15 @@ version: '3.7'
 
 services:
 
-  api:
-    container_name: zachsmith-api
+  api-gql:
+    container_name: api-gql
+    restart: always
+    build: ./api-gql/
+    ports:
+      - 4000:4000
+
+  api-http:
+    container_name: api-http
     restart: always
     build: ./api-http/
     ports:
