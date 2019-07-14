@@ -1,0 +1,17 @@
+{
+  "name": "api-gql",
+  "version": "0.0.1",
+  "description": "GraphQL API implemented via Apollo Server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.6.9",
+    "graphql": "^14.4.2"
+  }
+}
