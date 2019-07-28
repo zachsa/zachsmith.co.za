@@ -1,5 +1,8 @@
 version: '3.7'
 
+volumes:
+  postgres:
+
 services:
 
   postgresql:
@@ -7,31 +10,33 @@ services:
     container_name: postgresql
     ports:
       - 54320:5432
-
-  api-gql:
-    container_name: api-gql
-    restart: always
-    build: ./api-gql/
-    ports:
-      - 4000:4000
-
-  api-http:
-    container_name: api-http
-    restart: always
-    build: ./api-http/
-    ports:
-      - 3000:3000
-
-  client:
-    image: nginx:alpine
-    container_name: client-browser
-    restart: always
     volumes:
-      - type: bind
-        source: ./client-browser/dist/
-        target: /usr/share/nginx/html/
-      - type: bind
-        source: ./client-browser/nginx.conf
-        target: /etc/nginx/conf.d/default.conf
-    ports:
-      - 3001:80
+      - postgres:/var/lib/postgresql/data
+
+  # api-gql:
+  #   container_name: api-gql
+  #   restart: always
+  #   build: ./api-gql/
+  #   ports:
+  #     - 4000:4000
+
+  # api-http:
+  #   container_name: api-http
+  #   restart: always
+  #   build: ./api-http/
+  #   ports:
+  #     - 3000:3000
+
+  # client:
+  #   image: nginx:alpine
+  #   container_name: client-browser
+  #   restart: always
+  #   volumes:
+  #     - type: bind
+  #       source: ./client-browser/dist/
+  #       target: /usr/share/nginx/html/
+  #     - type: bind
+  #       source: ./client-browser/nginx.conf
+  #       target: /etc/nginx/conf.d/default.conf
+  #   ports:
+  #     - 3001:80
