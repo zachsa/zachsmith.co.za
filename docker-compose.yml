@@ -8,10 +8,18 @@ services:
   postgresql:
     image: postgres:11
     container_name: postgresql
+    restart: always
     ports:
       - 54320:5432
     volumes:
       - postgres:/var/lib/postgresql/data
+
+  api-authenticate:
+    container_name: api-authenticate
+    restart: always
+    build: ./api-authenticate
+    ports:
+      - 5000:5000
 
   # api-gql:
   #   container_name: api-gql
