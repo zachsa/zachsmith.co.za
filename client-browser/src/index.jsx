@@ -6,11 +6,6 @@ import WebFontLoader from 'webfontloader'
 import ApolloClient from "apollo-boost"
 import { ApolloProvider } from "react-apollo"
 
-// Example HTTP API / GQL request
-import Greeter from './gql-test.jsx'
-import httpTest from './http-test.js'
-httpTest()
-
 // Load the fonts
 WebFontLoader.load({
   google: {
@@ -23,7 +18,6 @@ const client = new ApolloClient({ uri: "http://localhost:4000" })
 const App = () => (
   <ApolloProvider client={client}>
     <HomePage />
-    <Greeter />
   </ApolloProvider>
 )
 

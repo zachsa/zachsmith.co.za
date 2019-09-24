@@ -6,3 +6,16 @@ $md-primary-color: $md-blue-500;
 $md-secondary-color: $md-light-blue-a-200;
 
 @include react-md-everything;
+
+html, body {
+  overflow-x: hidden;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
